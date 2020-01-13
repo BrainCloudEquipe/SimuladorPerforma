@@ -1,182 +1,244 @@
-<!--
- Simulador criado para a performaConciliadora, usando html, css e js.
-
--->
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	 <script src="scripts/scripts.js"></script>
-    <!-- <script src="jquery-3.4.1.min.js"></script> -->
-    <title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="scripts/scripts.js"></script>
+
+	<title></title>
+
 </head>
+
+<style>
+	.partesOcultas {
+		visibility: hidden;
+	}
+</style>
+
 <body>
 
-    <script>
-    //alert("Abertura da página");
-    </script>
+	<noscript>
+		é necessário habilitar javascript para a pagina funcionar corretamente.
+	</noscript>
 
-    <div id="simuladorCompleto">
-    <form class="form-horizontal" id="formSimulador" onsubmit="return false;">
-        <fieldset>
-        
-        <!-- Form Name -->
-        <strong><legend>Simulador Performa Conciliadora</legend></strong>
-        <br>
-        <br>
-        
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="selectbasic">Qual o faturamento mensal da sua empresa?</label>
-          <div class="col-md-4">
-            <select required onclick="" id="faturamento" name="faturamento" class="form-control">
-               <option value="0">Selecione um valor</option>
-               <option value="50000">Até R$ 50.000</option>
-               <option value="75000">Até R$ 75.000</option>
-               <option value="100000">Até R$ 100.000</option>
-               <option value="150000">Até R$ 150.000</option>
-               <option value="200000">Acima de R$150.000</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        
-        
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="maquinas">Quantas máquinas você tem?</label>
-          <div class="col-md-4">
-            <select required id="maquinas" name="maquinas" class="form-control">
-            <option value="0">Selecione um valor</option>
-              <option value="1">Uma</option>
-              <option value="2">Duas</option>
-              <option value="3">Três</option>
-              <option value="4">Quatro ou mais</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        
-        
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="adquirintes">Quantas adquirentes você trabalha? (Ex: Stone, Cielo, Rede outras)</label>
-          <div class="col-md-4">
-            <select required id="adquirintes" name="adquirintes" class="form-control">
-                    <option value="0">Selecione um número</option>
-              <option value="1">Uma</option>
-              <option value="2">Duas</option>
-              <option value="3">Três</option>
-              <option value="4">Quatro ou mais</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        
-        
-        
-        <!-- Multiple Radios -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="cartaobeneficio">Aceita cartões benefícios? (Ex: Sodexo, alelo, vale, outros)</label>
-          <div class="col-md-4">
-          <div class="radio">
-            <label for="cartaobeneficio0">
-              <input type="radio" name="cartaobeneficio" id="cartaobeneficio0" value="1">
-              Sim
-            </label>
-            </div>
-          <div class="radio">
-            <label for="cartaobeneficio1">
-              <input type="radio" name="cartaobeneficio" id="cartaobeneficio1" value="2">
-              Não
-            </label>
-            </div>
-          </div>
-        </div>
-        <br>
-        
-        
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="conferenciaVendas">Você confere suas vendas?</label>
-          <div class="col-md-4">
-            <select required id="conferenciaVendas" name="conferenciaVendas" class="form-control">
-              <option value="0">Selecione uma alternativa</option>
-              <option value="1">Não faço conferência</option>
-              <option value="2">Confere o total que é depositado no banco</option>
-              <option value="3">Confere o total que é depositado no banco e faz o fechamento das máquinas</option>
-              <option value="4">Faz o fechamento das máquinas, confiro o extrato das adquirentes e confere o deposito no banco</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        
-        
-        <!-- Select Basic -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="antecipacao">Faz antecipação?</label>
-          <div class="col-md-4">
-            <select required id="antecipacao" name="antecipacao" class="form-control">
-            <option value="0">Selecione uma resposta</option>
-              <option value="1">Não</option>
-              <option value="2">Faz antecipação automática</option>
-              <option value="3">Faz antecipação pontual</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        
-        
-        <!-- Multiple Radios -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="aluguelMaquinas">Confere mensalmente a cobrança de alugueis das máquinas?</label>
-          <div class="col-md-4">
-          <div class="radio">
-            <label for="aluguelMaquinas0">
-              <input type="radio" name="aluguelMaquinas" id="aluguelMaquinas0" value="1">
-              Sim
-            </label>
-            </div>
-          <div class="radio">
-            <label for="aluguelMaquinas1">
-              <input type="radio" name="aluguelMaquinas" id="aluguelMaquinas1" value="2">
-              Não
-            </label>
-            </div>
-          </div>
-        </div>
-        <br>
-        
-            
-      <div class="form-inline" style="width: fit-content;">
-        <div style="width: fit-content !important; height: fit-content; overflow: auto;" class="form-group mx-sm-3 mb-2 form-control lead"><p class="lead" id="outputSimulador" style="margin: auto">Quanto posso estar perdendo?</p></div>
-        <button onclick="escreverPerda();" type="submit" id="botaoCalcular" class="btn btn-info mb-2">Calcular</button>
-        <button style="display: none" onclick="window.location.reload();" type="submit" id="botaoPreencher" class="btn btn-info ml-2 mb-2">Preencher novamente</button>
-      </div>
+	<div class="mb-5 " id="cadastroEmail">
+
+		<form class="form-horizontal" id="formularioCadastro" onsubmit="return false;">
 
 
-        </fieldset>
-        </form>
-      </div>
-      <div id="printarOutput" style="display: none">
-        <div class="jumbotron">
-          <h1 class="display-4" id="numeroDinheiro">R$ 0,00</h1>
-          <p class="lead" id="textoDinheiro">Esse é o dinheiro aproximado que você pode estar perdendo mensalmente. Por ano, isso pode chegar a <strong class="font-weight-bold" id="dinheiroAno"></strong>.</p>
-          <hr class="my-4">
-          <p>Esse número foi calculado com base em suas respostas e nossas estimativas de perda.</p>
-          <p>Deseja perder menos dinheiro todo mês? Entre em contato conosco!</p>
-          <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Contato</a>
-          </p>
-        </div>
-      </div>
-        
+			<div class="form-group mb-2">
+				<label for="nomeInserido">Nome completo</label>
+				<input required  oninput="" class="form-control" id="nomeInserido" placeholder="Nome">
+				<label class="partesOcultas" id="legendaNome" for="nomeInserido">Opa! Parece que o nome completo não foi
+					digitado corretamente.. Insira nome seguido do sobrenome</label>
+			</div>
+
+			<div class="form-group mb-2">
+				<label for="telefoneInserido">Telefone / Whatsapp</label>
+				<input minlength="10" maxlength="25" required oninput="validarNome()" class="form-control" id="telefoneInserido" placeholder="DDD + número">
+				<label class="partesOcultas" id="legendaTelefone" for="telefoneInserido">Opa! Parece que o telefone não foi
+					digitado corretamente.. Insira o telefone com o código de área, ddd.</label>
+			</div>
+
+			<div class="form-group mb-2">
+				<label for="emailInserido">Endereço de email</label>
+				<input required oninput="validarTelefone()" type="email" class="form-control" id="emailInserido"
+					aria-describedby="emailHelp" placeholder="Email">
+				<label class="partesOcultas" id="legendaEmail" for="emailInserido">Opa! Parece que o email não foi digitado
+					corretamente..</label>
+			</div>
+
+			<button onclick="validarEmail();validarDados()" id="enviarDados" onsubmit="return false;"
+				class="btn btn-primary">Enviar</button>
+			<label id="labelEnviarDados" class="form-check-label" for="enviarDados"></label>
+		</form>
+	</div>
+
+	<div id="simuladorCompleto" class="partesOcultas">
+		<form class="form-horizontal" id="formSimulador" onsubmit="return false;">
+			<fieldset>
+
+				<!-- Form Name -->
+				<strong>
+					<legend>Simulador Performa Conciliadora</legend>
+				</strong>
+				<br>
+				<br>
+
+				<!-- Select Basic -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="selectbasic">Qual o faturamento mensal da sua empresa?</label>
+					<div class="col-md-4">
+						<select required onclick="" id="faturamento" name="faturamento" class="form-control">
+							<option value="0">Selecione um valor</option>
+							<option value="50000">Até R$ 50.000</option>
+							<option value="75000">Até R$ 75.000</option>
+							<option value="100000">Até R$ 100.000</option>
+							<option value="150000">Até R$ 150.000</option>
+							<option value="200000">Acima de R$150.000</option>
+						</select>
+					</div>
+				</div>
+				<br>
+
+
+				<!-- Select Basic -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="maquinas">Quantas máquinas você tem?</label>
+					<div class="col-md-4">
+						<select required id="maquinas" name="maquinas" class="form-control">
+							<option value="0">Selecione um valor</option>
+							<option value="1">Uma</option>
+							<option value="2">Duas</option>
+							<option value="3">Três</option>
+							<option value="4">Quatro ou mais</option>
+						</select>
+					</div>
+				</div>
+				<br>
+
+
+				<!-- Select Basic -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="adquirintes">Quantas adquirentes você trabalha? (Ex: Stone,
+						Cielo,
+						Rede outras)</label>
+					<div class="col-md-4">
+						<select required id="adquirintes" name="adquirintes" class="form-control">
+							<option value="0">Selecione um número</option>
+							<option value="1">Uma</option>
+							<option value="2">Duas</option>
+							<option value="3">Três</option>
+							<option value="4">Quatro ou mais</option>
+						</select>
+					</div>
+				</div>
+				<br>
+
+
+
+				<!-- Multiple Radios -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="cartaobeneficio">Aceita cartões benefícios? (Ex: Sodexo,
+						alelo,
+						vale, outros)</label>
+					<div class="col-md-4">
+						<div class="radio">
+							<label for="cartaobeneficio0">
+								<input required type="radio" name="cartaobeneficio" id="cartaobeneficio0" value="1">
+								Sim
+							</label>
+						</div>
+						<div class="radio">
+							<label for="cartaobeneficio1">
+								<input required type="radio" name="cartaobeneficio" id="cartaobeneficio1" value="2">
+								Não
+							</label>
+						</div>
+					</div>
+				</div>
+				<br>
+
+
+				<!-- Select Basic -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="conferenciaVendas">Você confere suas vendas?</label>
+					<div class="col-md-4">
+						<select required id="conferenciaVendas" name="conferenciaVendas" class="form-control">
+							<option value="0">Selecione uma alternativa</option>
+							<option value="1">Não faço conferência</option>
+							<option value="2">Confere o total que é depositado no banco</option>
+							<option value="3">Confere o total que é depositado no banco e faz o fechamento das máquinas
+							</option>
+							<option value="4">Faz o fechamento das máquinas, confiro o extrato das adquirentes e confere o
+								deposito no
+								banco</option>
+						</select>
+					</div>
+				</div>
+				<br>
+
+
+				<!-- Select Basic -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="antecipacao">Faz antecipação?</label>
+					<div class="col-md-4">
+						<select required id="antecipacao" name="antecipacao" class="form-control">
+							<option value="0">Selecione uma resposta</option>
+							<option value="1">Não</option>
+							<option value="2">Faz antecipação automática</option>
+							<option value="3">Faz antecipação pontual</option>
+						</select>
+					</div>
+				</div>
+				<br>
+
+
+				<!-- Multiple Radios -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="aluguelMaquinas">Confere mensalmente a cobrança de alugueis
+						das
+						máquinas?</label>
+					<div class="col-md-4">
+						<div class="radio">
+							<label for="aluguelMaquinas0">
+								<input required type="radio" name="aluguelMaquinas" id="aluguelMaquinas0" value="1">
+								Sim
+							</label>
+						</div>
+						<div class="radio">
+							<label for="aluguelMaquinas1">
+								<input required type="radio" name="aluguelMaquinas" id="aluguelMaquinas1" value="2">
+								Não
+							</label>
+						</div>
+					</div>
+				</div>
+				<br>
+
+
+				<div class="form-inline" style="width: fit-content;">
+					<div style="width: fit-content !important; height: fit-content; overflow: auto;"
+						class="form-group mx-sm-3 mb-2 form-control lead">
+						<p class="lead" id="outputSimulador" style="margin: auto">Quanto posso estar perdendo?</p>
+					</div>
+					<button onclick="escreverPerda();" type="submit" id="botaoCalcular"
+						class="btn btn-info mb-2">Calcular</button>
+					<button type="reset" id="botaoPreencher"
+						class="btn btn-info ml-2 mb-2 partesOcultas">Preencher novamente</button>
+				</div>
+
+
+			</fieldset>
+		</form>
+	</div>
+
+
+	<!--
+		A parte abaixo serve para printar o output. Ela comecará não visível, e, com o preenchimento correto do formulário, 
+		aparecerá, ao mesmo tempo que oculta a parte de cadastro.
+	-->
+
+	<div id="printarOutput" class="partesOcultas">
+		<div class="jumbotron">
+			<h1 class="display-4" id="numeroDinheiro">R$ 0,00</h1>
+			<p class="lead" id="textoDinheiro">Esse é o dinheiro aproximado que você pode estar perdendo mensalmente. Por
+				ano,
+				isso pode chegar a <strong class="font-weight-bold" id="dinheiroAno"></strong>.</p>
+			<hr class="my-4">
+			<p>Esse número foi calculado com base em suas respostas e nossas estimativas de perda.</p>
+			<p>Deseja perder menos dinheiro todo mês? Entre em contato conosco!</p>
+			<p class="lead">
+				<a class="btn btn-primary btn-lg"
+					href="https://pipedrivewebforms.com/form/2714c3e082fce28b75e58642b56f36da2644111"
+					role="button">Contato</a>
+			</p>
+		</div>
+	</div>
+
 </body>
+
 </html>
